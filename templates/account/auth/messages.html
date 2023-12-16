@@ -1,0 +1,4 @@
+{% for message in messages %} // Display an info toast with no title
+toastr.options.progressBar = true; toastr.{{message.tags}}("{{message|safe}}");
+<!---->
+{% endfor %}

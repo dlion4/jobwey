@@ -1,0 +1,138 @@
+{% extends "base.html" %} {% load static %} {% load humanize %}
+<!---->
+{% block hero %}
+
+<div class="position-relative">
+  <div class="shape overflow-hidden text-white">
+    <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z"
+        fill="currentColor"
+      ></path>
+    </svg>
+  </div>
+</div>
+<!-- Hero End -->
+{% endblock hero %}
+<!---->
+
+{% block head %}{{ block.super }}{% endblock head %}
+
+<!---->
+
+{% block main %}
+
+<div class="container" style="padding: 20px 0">
+  <div class="row justify-content-center mb-4 pb-2">
+    <div class="col-12">
+      <div class="section-title text-center">
+        <h4 class="title mb-3">Apply for {{job.title}}</h4>
+        <p class="text-muted para-desc mx-auto mb-0">
+          Search all the open positions on the web. Get your own personalized
+          salary estimate. Read reviews on over 30000+ companies worldwide.
+        </p>
+      </div>
+    </div>
+    <!--end col-->
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-lg-7 col-md-7">
+      <div class="card border-0">
+        <form
+          class="rounded shadow p-4"
+          method="post"
+          action="{{job.get_application_url}}"
+          enctype="multipart/form-data"
+        >
+          {% csrf_token %}
+
+          <div class="row">
+            <div class="col-12">
+              <div class="mb-3">
+                <label class="form-label fw-semibold">
+                  {{form.full_name.label}} :<span class="text-danger"
+                    >*</span
+                  ></label
+                >
+                {{form.full_name}}
+              </div>
+            </div>
+            <!--end col-->
+            <div class="col-12">
+              <div class="mb-3">
+                <label class="form-label fw-semibold">
+                  {{form.email_address.label}} :<span class="text-danger"
+                    >*</span
+                  ></label
+                >
+                {{form.email_address}}
+              </div>
+            </div>
+            <!--end col-->
+            <div class="col-12">
+              <div class="mb-3">
+                <label class="form-label fw-semibold"
+                  >{{form.phone_number.label}}. :<span class="text-danger"
+                    >*</span
+                  ></label
+                >
+                {{form.phone_number}}
+              </div>
+            </div>
+            <!--end col-->
+            <div class="col-12">
+              <div class="mb-3">
+                <label for="formFile" class="form-label fw-semibold"
+                  >Upload Your Cv / Resume :</label
+                >
+                {{form.resume}}
+              </div>
+            </div>
+            <!--end col-->
+            <div class="col-12">
+              <div class="mb-3">
+                <div class="form-check">
+                  {{form.agree_to_terms}}
+                  <label class="form-check-label" for="flexCheckDefault"
+                    >I Accept
+                    <a href="#" class="text-primary"
+                      >Terms And Condition</a
+                    ></label
+                  >
+                </div>
+              </div>
+            </div>
+            <!--end col-->
+          </div>
+          <!--end row-->
+          <div class="row">
+            <div class="col-12">
+              <input
+                type="submit"
+                id="submit2"
+                name="send"
+                class="submitBnt btn btn-primary"
+                value="Apply Now"
+              />
+            </div>
+            <!--end col-->
+          </div>
+          <!--end row-->
+        </form>
+        <!--end form-->
+      </div>
+      <!--end custom-form-->
+    </div>
+  </div>
+</div>
+<!--end container-->
+{% endblock main %}
+
+<!---->
+
+{% block messages %} {% if messages %}
+<script>
+  {% include "account/auth/messages.html" %}
+</script>
+
+{% endif %} {% endblock messages %}

@@ -1,0 +1,214 @@
+{% load static %}
+
+<header
+  id="topnav"
+  class="defaultscroll sticky nav-sticky"
+  style="background-color: #1e293b; color: white"
+>
+  <div class="container">
+    <a class="logo" href="{% url 'jobwey:home' %}">
+      <span class="logo-light-mode">
+        <img src="{% static 'images/logo-dark.png' %}" class="l-dark" alt="" />
+        <img
+          src="{% static 'images/logo-light.png' %}"
+          class="l-light"
+          alt=""
+        />
+      </span>
+      <img
+        src="{% static 'images/logo-light.png' %}"
+        class="logo-dark-mode"
+        alt=""
+      />
+    </a>
+
+    <div class="menu-extras">
+      <div class="menu-item">
+        <a class="navbar-toggle" id="isToggle" onclick="toggleMenu()">
+          <div class="lines">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <ul class="buy-button list-inline mb-0">
+      <li class="list-inline-item ps-1 mb-0">
+        <div class="dropdown">
+          <button
+            type="button"
+            class="dropdown-toggle btn btn-sm btn-icon btn-pills btn-primary"
+            data-bs-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            <i data-feather="search" class="icons"></i>
+          </button>
+          <div
+            class="dropdown-menu dd-menu dropdown-menu-end bg-white rounded border-0 mt-3 p-0"
+            style="width: 240px"
+          >
+            <div class="search-bar">
+              <div id="itemSearch" class="menu-search mb-0">
+                <form
+                  role="search"
+                  method="get"
+                  id="searchItemform"
+                  class="searchform"
+                >
+                  <input
+                    type="text"
+                    class="form-control rounded border"
+                    name="s"
+                    id="searchItem"
+                    placeholder="Search..."
+                  />
+                  <input type="submit" id="searchItemsubmit" value="Search" />
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      {% if request.user.is_authenticated %}
+
+      <li class="list-inline-item ps-1 mb-0">
+        <div class="dropdown dropdown-primary">
+          <button
+            type="button"
+            class="dropdown-toggle btn btn-sm btn-icon btn-pills btn-primary"
+            data-bs-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            <img
+              src="{% static 'images/team/01.jpg' %}"
+              class="img-fluid rounded-pill"
+              alt=""
+            />
+          </button>
+          <div
+            class="dropdown-menu dd-menu dropdown-menu-end bg-white rounded shadow border-0 mt-3"
+          >
+            <a
+              href="{% url 'account:profile' %}"
+              class="dropdown-item fw-medium fs-6"
+              ><i data-feather="user" class="fea icon-sm me-2 align-middle"></i
+              >Profile</a
+            >
+            <a
+              href="{% url 'account:update-profile' %}"
+              class="dropdown-item fw-medium fs-6"
+              ><i
+                data-feather="settings"
+                class="fea icon-sm me-2 align-middle"
+              ></i
+              >Settings</a
+            >
+            <div class="dropdown-divider border-top"></div>
+            <form
+              style="cursor: pointer"
+              method="post"
+              action="{% url 'account:logout' %}"
+              class="dropdown-item fw-medium fs-6"
+            >
+              {% csrf_token %}
+              <button
+                type="submit"
+                data-feather="lock"
+                class="fea icon-sm me-2 align-middle"
+              ></button
+              ><input
+                style="
+                  outline: none;
+                  border: none;
+                  background-color: transparent;
+                "
+                type="submit"
+                value="Lockscreen"
+              />
+            </form>
+            <form
+              class="dropdown-item fw-medium fs-6"
+              style="cursor: pointer"
+              method="post"
+              action="{% url 'account:logout' %}"
+            >
+              {% csrf_token %}
+              <button
+                type="submit"
+                data-feather="log-out"
+                class="fea icon-sm me-2 align-middle"
+              ></button
+              ><input
+                style="
+                  outline: none;
+                  border: none;
+                  background-color: transparent;
+                "
+                type="submit"
+                value="Logout"
+              />
+            </form>
+            <div class="dropdown-divider border-top"></div>
+            {% if request.user.is_staff %}
+            <a
+              href="{% url 'administrator:create' %}"
+              class="dropdown-item fw-medium fs-6"
+              ><i
+                data-feather="settings"
+                class="fea icon-sm me-2 align-middle"
+              ></i
+              >Create Company</a
+            >
+            {% endif %}
+          </div>
+        </div>
+      </li>
+      {% else %}
+      <li class="parent-menu-item btn">
+        <a href="{% url 'account:login' %}" class="background-color: blue;"
+          >Login</a
+        ><span class="menu-arrow"></span>
+      </li>
+      {% endif %}
+    </ul>
+
+    <div id="navigation">
+      <!-- Navigation Menu-->
+      <ul class="navigation-menu nav-right nav-light">
+        <li class="parent-menu-item">
+          <a style="color: gray" href="{% url 'jobwey:home' %}">Home</a
+          ><span class="menu-arrow"></span>
+        </li>
+
+        <li class="parent-parent-menu-item">
+          <a style="color: gray" href="{% url 'company:job_list_view' %}">
+            Jobs
+          </a>
+        </li>
+
+        <li class="has-submenu parent-menu-item">
+          <a style="color: gray" href="{% url 'company:company_list_view' %}"
+            >Employers</a
+          >
+        </li>
+
+        <li class="has-submenu parent-menu-item">
+          <a style="color: gray" href="{% url 'applicant:applicant' %}"
+            >Candidates</a
+          >
+        </li>
+
+        <li>
+          <a style="color: gray" href="" class="sub-menu-item">Contact Us</a>
+        </li>
+      </ul>
+      <!--end navigation menu-->
+    </div>
+    <!--end navigation-->
+  </div>
+</header>

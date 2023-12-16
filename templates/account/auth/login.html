@@ -1,0 +1,78 @@
+{% extends "account/base.html" %} {% load static %}
+<!---->
+{% block title %}Sign In{% endblock title %}
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+{% block content %}
+
+<form action="{% url 'account:login' %}" method="post">
+  {% csrf_token %}
+  <a href=""
+    ><img
+      src="{% static 'images/logo-dark.png' %}"
+      class="mb-4 d-block mx-auto"
+      alt=""
+  /></a>
+  <h6 class="mb-3 text-uppercase fw-semibold">Please sign in</h6>
+
+  <div class="mb-3">
+    <label class="form-label fw-semibold">Your Email</label>
+    {{form.email}}
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label fw-semibold" for="loginpass">Password</label>
+    {{form.password}}
+  </div>
+
+  <div class="d-flex justify-content-between">
+    <div class="mb-3">
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="flexCheckDefault"
+        />
+        <label
+          class="form-label form-check-label text-muted"
+          for="flexCheckDefault"
+          >Remember me</label
+        >
+      </div>
+    </div>
+    <span class="forgot-pass text-muted small mb-0"
+      ><a href="{% url 'account:forgot-password' %}" class="text-muted"
+        >Forgot password ?</a
+      ></span
+    >
+  </div>
+
+  <button class="btn btn-primary w-100" type="submit">Sign in</button>
+
+  <div class="col-12 text-center mt-3">
+    <span
+      ><span class="text-muted me-2 small">Don't have an account ?</span>
+      <a href="{% url 'account:signup' %}" class="text-dark fw-semibold small"
+        >Sign Up</a
+      ></span
+    >
+  </div>
+  <!--end col-->
+</form>
+
+{% endblock content %}
+
+<!---->
+
+{% block messages %} {% if messages %}
+<script>
+  {% include "account/auth/messages.html" %}
+</script>
+
+{% endif %} {% endblock messages %}

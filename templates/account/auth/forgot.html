@@ -1,0 +1,53 @@
+{% extends "account/base.html" %} {% load static %}
+<!---->
+{% block title %}Forgot Password{% endblock title %}
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+{% block content %}
+
+<form action="{% url 'account:forgot-password' %}" method="post">
+  {% csrf_token %}
+  <a href=""
+    ><img
+      src="{% static 'images/logo-dark.png' %}"
+      class="mb-4 d-block mx-auto"
+      alt=""
+  /></a>
+  <h6 class="mb-2 text-uppercase fw-semibold">Reset your password</h6>
+  <p class="text-muted">
+    Please enter your email address. You will receive a link to create a new
+    password via email.
+  </p>
+  <div class="mb-3">
+    <label class="form-label fw-semibold">Your Email</label>
+    {{form.email}}
+  </div>
+
+  <button class="btn btn-primary w-100" type="submit">Send</button>
+
+  <div class="col-12 text-center mt-3">
+    <span
+      ><span class="text-muted small me-2">Remember your password ? </span>
+      <a href="{% url 'account:login' %}" class="text-dark fw-semibold small"
+        >Sign in</a
+      ></span
+    >
+  </div>
+  <!--end col-->
+</form>
+
+{% endblock content %}
+
+<!---->
+
+{% block messages %} {% if messages %}
+<script>
+  {% include "account/auth/messages.html" %}
+</script>
+
+{% endif %} {% endblock messages %}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{% block title %}{% endblock title %}</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="jobwey" />
+    <meta name="website" content="{{domain}}" />
+    <meta name="email" content="{{support_email}}" />
+    <meta name="version" content="1.0.0" />
+    <!-- favicon -->
+    <link href="{% static 'images/favicon.ico' %}" rel="shortcut icon" />
+    <!-- Bootstrap core CSS -->
+    <link
+      href="{% static 'css/bootstrap.min.css' %}"
+      type="text/css"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'css/tiny-slider.css' %}"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="{% static 'css/tobii.min.css' %}"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link href="{% static 'css/choices.min.css' %}" rel="stylesheet" />
+    <link
+      href="{% static 'css/materialdesignicons.min.css' %}"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- Custom  Css -->
+    <link
+      href="{% static 'css/style.min.css' %}"
+      rel="stylesheet"
+      type="text/css"
+      id="theme-opt"
+    />
+
+    <!--Tinymce-->
+    <script
+      src="https://cdn.tiny.cloud/1/{{tinymce_apikey}}/tinymce/6/tinymce.min.js"
+      referrerpolicy="origin"
+    ></script>
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
+
+  <body>
+    <!-- Navbar STart -->
+    {% include "common/header.html" %}
+    <!--Bloc unique-->
+    {% block unique %}{% endblock unique %}
+    <!-- Navbar End -->
+    {% block hero %}{% endblock hero %}
+    <!-- section-->
+    <section class="section">{% block main %}{% endblock main %}</section>
+    <!-- End -->
+
+    <!-- Footer Start -->
+
+    <!---->
+    {% include "common/footer.html" %}
+
+    <!--end footer-->
+    <!-- Footer End -->
+
+    <!-- Back to top -->
+    <a
+      href="#"
+      onclick="topFunction()"
+      id="back-to-top"
+      class="back-to-top rounded fs-5"
+      ><i data-feather="arrow-up" class="fea icon-sm align-middle"></i
+    ></a>
+    <!-- Back to top -->
+
+    <!-- JAVASCRIPTS -->
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/tiny-slider.js' %}"></script>
+    <script src="{% static 'js/tobii.min.js' %}"></script>
+    <script src="{% static 'js/choices.min.js' %}"></script>
+    <script src="{% static 'js/feather.min.js' %}"></script>
+    <!-- Custom -->
+    <script src="{% static 'js/plugins.init.js' %}"></script>
+    <script src="{% static 'js/app.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+    {% block messages %} {% endblock messages %}
+  </body>
+</html>

@@ -1,0 +1,158 @@
+{% extends "base.html" %} {% load static %}
+
+<!---->
+{% block hero %}
+
+<section
+  class="bg-half-170 d-table w-100"
+  style="background: url('{{company.image.url}}') center"
+>
+  <div class="bg-overlay bg-gradient-overlay-2"></div>
+</section>
+
+<!--end section-->
+
+<div class="position-relative">
+  <div class="shape overflow-hidden text-white">
+    <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z"
+        fill="currentColor"
+      ></path>
+    </svg>
+  </div>
+</div>
+<!-- Hero End -->
+{% endblock hero %}
+<!---->
+
+{% block head %}{{ block.super }}{% endblock head %}
+
+<!---->
+
+{% block main %}
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12 mt-4">
+      <div class="features-absolute">
+        <div
+          class="d-md-flex justify-content-between align-items-center bg-white shadow rounded p-4"
+        >
+          <div class="d-flex align-items-center">
+            <img
+              src="{{company.logo.url}}"
+              class="avatar avatar-md-md rounded shadow p-3 bg-white"
+              alt=""
+            />
+
+            <div class="ms-3">
+              <h5>{{company.name|title}}</h5>
+              <span class="text-muted d-flex align-items-center"
+                ><i data-feather="map-pin" class="fea icon-sm me-1"></i
+                >{{company.location|default:"Unknown, TZ"}}</span
+              >
+            </div>
+          </div>
+          {% if request.user.is_staff %}
+
+          <div class="mt-4 mt-md-0">
+            <a
+              href="{% url 'administrator:position-create' company.slug %}"
+              class="btn btn-sm btn-primary me-1"
+              >create position</a
+            >
+            <a
+              href="{% url 'administrator:company-update' company.slug  %}"
+              class="btn btn-sm btn-soft-primary"
+              >Update Company</a
+            >
+            <a href="" class="btn btn-sm btn-soft-primary">See Jobs</a>
+          </div>
+
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    <!--end col-->
+  </div>
+  <!--end row-->
+</div>
+<!--end container-->
+
+<div class="container">
+  <div class="row g-4">
+    <div class="col-lg-8 col-md-7 col-12">
+      {{company.content|safe}}
+      <h4 class="my-4">
+        Job{{company.jobs_count|pluralize}}: ({{company.jobs_count}})
+      </h4>
+
+      {% if company.get_jobs %}
+      <div class="row g-4">
+        {% for job in company.get_jobs %}
+        <div class="col-lg-6 col-12">
+          <div class="job-post rounded shadow bg-white">
+            <div class="p-4">
+              <a href="{{job.get_absolute_url}}" class="text-dark title h5"
+                >{{job.title|title}}:
+                <small style="margin-left: 12px"
+                  >({{job.positions}}
+                  Position{{job.positions|pluralize}})</small
+                >
+              </a>
+
+              <p class="text-muted d-flex align-items-center small mt-3">
+                <i
+                  data-feather="clock"
+                  class="fea icon-sm text-primary me-1"
+                ></i
+                >Posted {{job.createdAt|timesince}} ago
+              </p>
+
+              <ul
+                class="list-unstyled d-flex justify-content-between align-items-center mb-0 mt-3"
+              >
+                <li class="list-inline-item">
+                  <span class="badge bg-soft-primary"
+                    >{{job.get_type_display}}</span
+                  >
+                </li>
+                <li class="list-inline-item">
+                  <span class="text-muted d-flex align-items-center small"
+                    ><i
+                      data-feather="dollar-sign"
+                      class="fea icon-sm text-primary me-1"
+                    ></i
+                    >${{job.min_salary}} - ${{job.max_salary}}/mo</span
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="d-flex align-items-center p-4 border-top">
+              <img
+                src="{{job.company.logo.url}}"
+                class="avatar avatar-small rounded shadow p-3 bg-white"
+                alt=""
+              />
+
+              <div class="ms-3">
+                <h6>{{job.company.name|title}}</h6>
+                <span class="text-muted d-flex align-items-center"
+                  ><i data-feather="map-pin" class="fea icon-sm me-1"></i
+                  >{{job.location}}</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+    <!--end col-->
+  </div>
+  <!--end row-->
+</div>
+
+{% endblock main %}

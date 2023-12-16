@@ -1,0 +1,265 @@
+{% extends "base.html" %} {% load static %} {% load humanize %}
+
+<!---->
+
+{% block head %}{{ block.super }}{% endblock head %}
+<!---->
+
+{% block unique %}
+<section class="bg-half d-table w-100 bg-light" style="height: 100%">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-8 col-md-6 col-12">
+        <div
+          class="d-lg-flex align-items-center p-4 rounded shadow bg-white mb-4"
+        >
+          <img
+            src="{{job.company.logo.url}}"
+            class="avatar avatar-medium p-4 rounded-pill shadow bg-white"
+            alt="{{job.company.name}}"
+          />
+
+          <div class="ms-lg-3 mt-3 mt-lg-0">
+            <h4>{{job.title|title}}</h4>
+
+            <ul class="list-unstyled mb-0">
+              <li class="d-inline-flex align-items-center text-muted me-2">
+                <i
+                  data-feather="layout"
+                  class="fea icon-sm text-primary me-1"
+                ></i>
+                {{job.company.name|title}} pvt. ltd.
+              </li>
+              <li class="d-inline-flex align-items-center text-muted">
+                <i
+                  data-feather="map-pin"
+                  class="fea icon-sm text-primary me-1"
+                ></i>
+                {{job.location|title}}
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {{job.content|safe}}
+
+        <div class="mt-4">
+          <a href="{{job.get_application_url}}" class="btn btn-outline-primary"
+            >Apply Now <i class="mdi mdi-send"></i
+          ></a>
+        </div>
+      </div>
+      <!--end col-->
+
+      <div class="col-lg-4 col-md-6 col-12">
+        <div class="card bg-white rounded shadow sticky-bar">
+          <div class="p-4">
+            <h5 class="mb-0">Job Information</h5>
+          </div>
+
+          <div class="card-body p-4 border-top">
+            <div class="d-flex widget align-items-center">
+              <i data-feather="layout" class="fea icon-ex-md me-3"></i>
+              <div class="flex-1">
+                <h6 class="widget-title mb-0">Company Name:</h6>
+                <small class="text-primary mb-0"
+                  >{{job.company.name|title}}</small
+                >
+              </div>
+            </div>
+
+            <div class="d-flex widget align-items-center mt-3">
+              <i data-feather="user-check" class="fea icon-ex-md me-3"></i>
+              <div class="flex-1">
+                <h6 class="widget-title mb-0">Employee Type:</h6>
+                <small class="text-primary mb-0"
+                  >{{job.get_type_display|title}}</small
+                >
+              </div>
+            </div>
+
+            <div class="d-flex widget align-items-center mt-3">
+              <i data-feather="map-pin" class="fea icon-ex-md me-3"></i>
+              <div class="flex-1">
+                <h6 class="widget-title mb-0">Location:</h6>
+                <small class="text-primary mb-0">{{job.location|title}}</small>
+              </div>
+            </div>
+
+            <div class="d-flex widget align-items-center mt-3">
+              <i data-feather="monitor" class="fea icon-ex-md me-3"></i>
+              <div class="flex-1">
+                <h6 class="widget-title mb-0">Job Type:</h6>
+                <small class="text-primary mb-0">{{job.title|title}}</small>
+              </div>
+            </div>
+
+            <div class="d-flex widget align-items-center mt-3">
+              <i data-feather="briefcase" class="fea icon-ex-md me-3"></i>
+              <div class="flex-1">
+                <h6 class="widget-title mb-0">
+                  Application{{job.get_applications.count|pluralize}}:
+                </h6>
+                <small class="text-primary mb-0"
+                  >{{job.get_applications.count}}</small
+                >
+              </div>
+            </div>
+
+            <div class="d-flex widget align-items-center mt-3">
+              <i data-feather="book" class="fea icon-ex-md me-3"></i>
+              <div class="flex-1">
+                <h6 class="widget-title mb-0">Qualifications:</h6>
+                <small class="text-primary mb-0">MSCIT</small>
+              </div>
+            </div>
+
+            <div class="d-flex widget align-items-center mt-3">
+              <i data-feather="dollar-sign" class="fea icon-ex-md me-3"></i>
+              <div class="flex-1">
+                <h6 class="widget-title mb-0">Salary:</h6>
+                <small class="text-primary mb-0"
+                  >+{{job.min_salary|intword}} to
+                  {{job.max_salary|intword}}</small
+                >
+              </div>
+            </div>
+
+            <div class="d-flex widget align-items-center mt-3">
+              <i data-feather="clock" class="fea icon-ex-md me-3"></i>
+              <div class="flex-1">
+                <h6 class="widget-title mb-0">Date posted:</h6>
+                <small class="text-primary mb-0 mb-0"
+                  >{{job.createdAt|date:"F m Y"}}</small
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--end col-->
+    </div>
+    <!--end row-->
+  </div>
+</section>
+{% endblock unique %}
+
+<!---->
+{% block main %}
+
+<div class="container mt-100 mt-60">
+  <div class="row justify-content-center mb-4 pb-2">
+    <div class="col-12">
+      <div class="section-title text-center">
+        <h4 class="title mb-3">Related Vacancies</h4>
+        <p class="text-muted para-desc mx-auto mb-0">
+          Search all the open positions on the web. Get your own personalized
+          salary estimate. Read reviews on over 30000+ companies worldwide.
+        </p>
+      </div>
+    </div>
+    <!--end col-->
+  </div>
+  <!--end row-->
+
+  {% if related_jobs %}
+
+  <div class="row">
+    {% for job in related_jobs %}
+    <div class="col-lg-6 col-12">
+      <div class="job-post rounded shadow bg-white">
+        <div class="p-4">
+          <a href="{{job.get_absolute_url}}" class="text-dark title h5"
+            >{{job.title|title}}:
+            <small style="margin-left: 12px"
+              >({{job.positions}} Position{{job.positions|pluralize}})</small
+            >
+          </a>
+
+          <p class="text-muted d-flex align-items-center small mt-3">
+            <i data-feather="clock" class="fea icon-sm text-primary me-1"></i
+            >Posted {{job.createdAt|timesince}} ago
+          </p>
+
+          <ul
+            class="list-unstyled d-flex justify-content-between align-items-center mb-0 mt-3"
+          >
+            <li class="list-inline-item">
+              <span class="badge bg-soft-primary"
+                >{{job.get_type_display}}</span
+              >
+            </li>
+            <li class="list-inline-item">
+              <span class="text-muted d-flex align-items-center small"
+                ><i
+                  data-feather="dollar-sign"
+                  class="fea icon-sm text-primary me-1"
+                ></i
+                >${{job.min_salary}} - ${{job.max_salary}}/mo</span
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="d-flex align-items-center p-4 border-top">
+          <img
+            src="{{job.company.logo.url}}"
+            class="avatar avatar-small rounded shadow p-3 bg-white"
+            alt=""
+          />
+
+          <div class="ms-3">
+            <h6>{{job.company.name|title}}</h6>
+            <span class="text-muted d-flex align-items-center"
+              ><i data-feather="map-pin" class="fea icon-sm me-1"></i
+              >{{job.location}}</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <!--end row-->
+  {% endif %}
+</div>
+<!--end container-->{% endblock main %}
+<!---->
+<!---->
+
+{% block footer_extra %}
+<div class="py-5 footer-bar">
+  <div class="container">
+    <div class="row align-items-end">
+      <div class="col-md-7">
+        <div class="section-title">
+          <div class="d-flex align-items-center">
+            <i data-feather="bookmark" class="fea icon-lg"></i>
+            <div class="flex-1 ms-3">
+              <h4 class="fw-bold text-white mb-2">Explore a job now!</h4>
+              <p class="text-white-50 mb-0">
+                Search all the open positions on the web. Get your own
+                personalized salary estimate. Read reviews on over 30000+
+                companies worldwide.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--end col-->
+
+      <div class="col-md-5 mt-4 mt-sm-0">
+        <div class="text-md-end ms-5 ms-sm-0">
+          <a href="" class="btn btn-primary me-1 my-1">Apply Now</a>
+          <a href="contactus.html" class="btn btn-soft-primary my-1"
+            >Contact Us</a
+          >
+        </div>
+      </div>
+      <!--end col-->
+    </div>
+    <!--end row-->
+  </div>
+  <!--end container-->
+</div>
+<!--end div-->
+{% endblock footer_extra %}

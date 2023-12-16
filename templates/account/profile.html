@@ -1,0 +1,168 @@
+{% extends "base.html" %} {% load static %} {% load humanize %}
+<!---->
+{% block hero %}
+
+<div class="position-relative">
+  <div class="shape overflow-hidden text-white">
+    <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z"
+        fill="currentColor"
+      ></path>
+    </svg>
+  </div>
+</div>
+<!-- Hero End -->
+{% endblock hero %}
+<!---->
+
+{% block head %}{{ block.super }}{% endblock head %}
+
+<!---->
+
+{% block main %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="position-relative">
+        <div class="candidate-cover">
+          <img
+            src="{% static 'images/hero/bg5.jpg' %}"
+            class="img-fluid rounded shadow"
+            alt=""
+          />
+        </div>
+        <div
+          class="candidate-profile d-flex align-items-end justify-content-between mx-2"
+        >
+          <div class="d-flex align-items-end">
+            <img
+              src="{% if profile.profile_photo %}{{profile.profile_photo.url}}{% else %}{% static 'images/team/01.jpg' %}{% endif %}"
+              class="rounded-pill shadow border border-3 avatar avatar-medium"
+              alt=""
+            />
+
+            <div class="ms-2">
+              <h5 class="mb-0">{{profile}}</h5>
+              <p class="text-muted mb-0">Active Applicant</p>
+            </div>
+          </div>
+
+          <a
+            href="{% url 'account:update-profile' %}"
+            class="btn btn-sm btn-icon btn-pills btn-soft-primary"
+            ><i data-feather="settings" class="icons"></i
+          ></a>
+        </div>
+      </div>
+    </div>
+    <!--end col-->
+  </div>
+  <!--end row-->
+</div>
+<!--end container-->
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="rounded shadow p-4">
+        <form action="{% url 'account:profile' %}" method="post">
+          {% csrf_token %}
+          <h5>Testimonial :</h5>
+          <div class="row mt-4">
+            <div class="col-12">
+              <style>
+                .django-ckeditor-widget,
+                textarea {
+                  min-width: "100% !important";
+                }
+              </style>
+              <div class="mb-3">{{ t_form.media }} {{t_form.testimony}}</div>
+            </div>
+            <!--end col-->
+
+            <div class="col-12">
+              <input
+                type="submit"
+                id="submit2"
+                name="send"
+                class="submitBnt btn btn-primary"
+                value="submit testimonial"
+              />
+            </div>
+            <!--end col-->
+          </div>
+        </form>
+      </div>
+
+      <div class="rounded shadow p-4 mt-4">
+        <h5 class="text-primary">Your Application:</h5>
+        <hr />
+        <div class="row g-4 gy-5" style="padding-top: 20px">
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+            <div
+              class="employer-card position-relative bg-white rounded shadow p-4 mt-3"
+            >
+              <div
+                class="employer-img d-flex justify-content-center align-items-center bg-white shadow-md rounded"
+              >
+                <img
+                  src="{% static 'images/company/spotify.png' %}"
+                  class="avatar avatar-ex-small"
+                  alt=""
+                />
+              </div>
+
+              <div class="content mt-3">
+                <a href="" class="title text-dark h5">Spotify</a>
+
+                <p class="text-muted mt-2 mb-0">
+                  Digital Marketing Solutions for Tomorrow
+                </p>
+              </div>
+
+              <ul
+                class="list-unstyled d-flex justify-content-between align-items-center border-top mt-3 pt-3 mb-0"
+              >
+                <li class="text-muted d-inline-flex align-items-center">
+                  <i
+                    data-feather="map-pin"
+                    class="fea icon-sm me-1 align-middle"
+                  ></i
+                  >Australia
+                </li>
+                <li class="list-inline-item text-primary fw-medium">6 Jobs</li>
+              </ul>
+            </div>
+          </div>
+          <!--end col-->
+        </div>
+      </div>
+
+      <div class="rounded shadow p-4 mt-4">
+        <form>
+          <h5 class="text-danger">Delete Account :</h5>
+          <div class="row mt-4">
+            <h6 class="mb-0">
+              Do you want to delete the account? Please press below "Delete"
+              button
+            </h6>
+            <div class="mt-4">
+              <button class="btn btn-danger">Delete Account</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock main %}
+
+<!---->
+
+{% block messages %} {% if messages %}
+<script>
+  {% include "account/auth/messages.html" %}
+</script>
+
+{% endif %} {% endblock messages %}
