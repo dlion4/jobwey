@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-0tzz+q&ywo=qxr4a2+g98mpwmjv=$0+*&8+f&zh&=b252#-cvx"
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -229,8 +229,6 @@ CKEDITOR_CONFIGS = {
 
 
 
-
-
 USE_S3 = os.getenv('USE_S3') == 'TRUE'
 
 if USE_S3:
@@ -243,11 +241,11 @@ if USE_S3:
     AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
     # s3 static settings
     # s3 static settings
-    STATIC_LOCATION = 'static_v1'
+    STATIC_LOCATION = 'static'
     STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATIC_LOCATION}/'
     STATICFILES_STORAGE = 'upjobwey.mediaStorage.StaticStorage'
     # s3 public media settings
-    PUBLIC_MEDIA_LOCATION = 'media_v1'
+    PUBLIC_MEDIA_LOCATION = 'media'
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_MEDIA_LOCATION}/'
     DEFAULT_FILE_STORAGE = 'upjobwey.mediaStorage.PublicMediaStorage'
 
