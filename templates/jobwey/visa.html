@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+<!---->
+{% load static %}
+<!-- Navbar End -->
+{% block hero %}{% endblock hero %}
+<!-- section-->
+<!-- section-->
+<!-- section-->
+<!-- section-->
+<!-- section-->
+<!-- section-->
+<!-- section-->
+<!-- section-->
+<!-- section-->
+
+{% block main %}
+<div class="container">
+  <div class="row g-4">
+    <div class="row g-4">
+      <div class="col-lg-8 col-md-7">
+        <div class="card border-0 shadow rounded overflow-hidden">
+          <div class="card-body">
+            <p class="text-muted text-dark mt-2">{{visa.country|title}}</p>
+            <hr />
+            <p class="text-muted">{{visa.content|safe}}</p>
+          </div>
+        </div>
+      </div>
+      <!--end col-->
+
+      <!-- section-->
+      {% include "posts/recent_posts.html" %}
+      <!--end col-->
+      <!-- section-->
+      <!-- section-->
+    </div>
+  </div>
+</div>
+{% endblock main %}

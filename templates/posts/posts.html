@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+<!---->
+{% load static %}
+<!-- Navbar End -->
+{% block hero %}{% endblock hero %}
+<!-- section-->
+
+{% block main %}
+<div class="container">
+  <div class="row g-4">
+    <div class="row g-4">
+      <div class="col-lg-8 col-md-6 col-12">
+        {% if posts %}
+        <div class="row g-4">
+          {% for post in posts %}
+
+          <div class="col-lg-6">
+            <div
+              class="card blog blog-primary shadow rounded overflow-hidden border-0"
+            >
+              <div
+                class="card-img blog-image position-relative overflow-hidden rounded-0"
+              >
+                <div class="position-relative overflow-hidden">
+                  <img
+                    src="{% static 'images/blog/01.jpg' %}"
+                    class="img-fluid"
+                    alt=""
+                  />
+                  <div class="card-overlay"></div>
+                </div>
+              </div>
+
+              <div class="card-body blog-content position-relative p-0">
+                <div class="blog-tag px-4">
+                  <a
+                    href="javascript:void(0)"
+                    class="badge bg-primary rounded-pill"
+                    >{{post.category|truncatewords:"20"}}</a
+                  >
+                </div>
+                <div class="p-4">
+                  <ul class="list-unstyled text-muted small mb-2">
+                    <li class="d-inline-flex align-items-center me-2">
+                      <i
+                        data-feather="calendar"
+                        class="fea icon-ex-sm me-1 text-dark"
+                      ></i
+                      >{{post.createdAt|date:"jS F Y"}}
+                    </li>
+                    <li class="d-inline-flex align-items-center">
+                      <i
+                        data-feather="clock"
+                        class="fea icon-ex-sm me-1 text-dark"
+                      ></i
+                      >{{post.read_time}} min read
+                    </li>
+                  </ul>
+
+                  <a
+                    href="{{ post.get_absolute_url }}"
+                    class="title fw-semibold fs-5 text-dark"
+                    >{{post.title|title}}</a
+                  >
+
+                  <ul
+                    class="list-unstyled d-flex justify-content-between align-items-center text-muted mb-0 mt-3"
+                  >
+                    <li class="list-inline-item me-2">
+                      <a
+                        href="{{ post.get_absolute_url }}"
+                        class="btn btn-link primary text-dark"
+                        >Read Now <i class="mdi mdi-arrow-right"></i
+                      ></a>
+                    </li>
+                    <li class="list-inline-item">
+                      <span class="text-dark">By</span>
+                      <a href="javascript:void(0)" class="text-muted link-title"
+                        >Jobwey Editors</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--end col-->
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+
+      <!-- section-->
+      {% include "posts/recent_posts.html" %}
+      <!--end col-->
+      <!-- section-->
+      <!-- section-->
+    </div>
+  </div>
+</div>
+{% endblock main %}
+
+<!-- section-->
+<!-- section-->
+<!-- section-->
+<!-- section-->
+<!-- section-->
+<!-- section-->

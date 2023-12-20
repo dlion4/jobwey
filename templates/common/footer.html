@@ -1,5 +1,14 @@
 {% load static %}
 
+<!---->
+<style>
+  div > ul,
+  ul {
+    list-style: none;
+  }
+</style>
+<!---->
+
 <footer class="bg-footer">
   <div class="py-5">
     <div class="container">
@@ -28,9 +37,7 @@
               class="btn btn-primary me-1 my-1"
               >Apply Now</a
             >
-            <a href="contactus.html" class="btn btn-soft-primary my-1"
-              >Contact Us</a
-            >
+            <a href="" class="btn btn-soft-primary my-1">Contact Us</a>
           </div>
         </div>
         <!--end col-->
@@ -96,16 +103,24 @@
             </div>
             <div class="col-sm-3">
               <div class="text-center text-sm-start">
-                <ul>
-                  <li>
+                <ul style="display: flex; margin: 0 10px">
+                  <li style="margin-right: 20px">
                     <a href="#" target="_blank">
-                      <img src="{% static 'images/app1.png' %}" alt="App" />
+                      <img
+                        style="width: 150px; height: 50px"
+                        src="{% static 'images/app1.png' %}"
+                        alt="App"
+                      />
                     </a>
                   </li>
                   <br />
                   <li>
                     <a href="#" target="_blank">
-                      <img src="{% static 'images/app2.png' %}" alt="App" />
+                      <img
+                        style="width: 150px; height: 50px"
+                        src="{% static 'images/app2.png' %}"
+                        alt="App"
+                      />
                     </a>
                   </li>
                 </ul>
@@ -117,12 +132,16 @@
                 class="list-unstyled footer-list terms-service text-center text-sm-end mb-0"
               >
                 <li class="list-inline-item my-2">
-                  <a href="index.html" class="text-foot fs-6 fw-medium me-2"
+                  <a
+                    href="{% url 'jobwey:services' %}"
+                    class="text-foot fs-6 fw-medium me-2"
                     ><i class="mdi mdi-circle-small"></i> Services</a
                   >
                 </li>
                 <li class="list-inline-item my-2">
-                  <a href="services.html" class="text-foot fs-6 fw-medium me-2"
+                  <a
+                    href="{% url 'jobwey:services' %}"
+                    class="text-foot fs-6 fw-medium me-2"
                     ><i class="mdi mdi-circle-small"></i> Terms & conditions</a
                   >
                 </li>
@@ -139,6 +158,13 @@
                 <li class="list-inline-item my-2">
                   <a href="pricing.html" class="text-foot fs-6 fw-medium"
                     ><i class="mdi mdi-circle-small"></i> Customer Services</a
+                  >
+                </li>
+                <li class="list-inline-item my-2">
+                  <a
+                    href="{% url 'jobwey:visas' %}"
+                    class="text-foot fs-6 fw-medium"
+                    ><i class="mdi mdi-circle-small"></i> Visas</a
                   >
                 </li>
               </ul>

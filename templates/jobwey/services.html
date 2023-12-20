@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+<!---->
+{% load static %}
+<!-- Navbar End -->
+{% block hero %}{% endblock hero %}
+<!-- section-->
+
+{% block main %}
+
+<div class="container mt-60">
+  {% if services %}
+
+  <div class="row g-4">
+    {% for service in services %}
+
+    <div class="col-lg-4 col-md-6 col-12">
+      <div class="job-post job-type-three rounded shadow bg-white p-4">
+        <div class="d-flex justify-content-between">
+          <div>
+            <svg
+              class="img-fluid avatar avatar-md-sm rounded-circle shadow"
+              width="40"
+              height="40"
+              data-jdenticon-value="user{{service.pk}}"
+            ></svg>
+            <a
+              href="{{service.get_absolute_url}}"
+              class="h5 company text-dark d-block mt-2"
+              >{{service.country|title}}</a
+            >
+          </div>
+
+          <ul class="list-unstyled align-items-center mb-0">
+            <li class="list-inline-item">
+              <a href="javascript:void(0)" class="like"
+                ><i class="mdi mdi-heart align-middle fs-3"></i
+              ></a>
+            </li>
+            <li class="list-inline-item">
+              <a
+                href="{{service.get_absolute_url}}"
+                class="btn btn-icon btn-sm btn-soft-primary"
+                ><i data-feather="bookmark" class="icons"></i
+              ></a>
+            </li>
+            <li class="list-inline-item">
+              <a
+                href="{{service.get_absolute_url}}"
+                class="btn btn-icon btn-sm btn-soft-primary"
+                ><i data-feather="arrow-up-right" class="icons"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="mt-2">
+          <a href="{{service.get_absolute_url}}" class="text-dark title h5"
+            >{{service.title|truncatewords:"20"}}</a
+          >
+          <p class="text-muted mt-2">{{service.summary|truncatewords:"40"}}</p>
+
+          <ul class="list-unstyled mb-0">
+            <li class="d-inline-block me-1">
+              <a href="" class="badge bg-primary">{{service.price}}</a>
+            </li>
+            <li class="d-inline-block me-1">
+              <a href="" class="badge bg-primary"
+                ><i class="mdi mdi-map-marker me-1"></i>{{service.country}}</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--end col-->
+    {% endfor %}
+  </div>
+  {% endif %}
+</div>
+
+{% endblock main %}
+
+<!-- section-->
+<!-- section-->
+<!-- section-->
+<!-- section-->
+<!-- section-->
+<!-- section-->

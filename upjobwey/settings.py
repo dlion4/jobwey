@@ -42,12 +42,14 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
 
     'django.contrib.humanize',
+    "django.contrib.sitemaps",
 
     "account",
     "jobwey",
     "companies",
     "applicants",
     "testimonials",
+    "posts",
 
     # configarations
     "tokens",
@@ -55,6 +57,7 @@ INSTALLED_APPS = [
     # frameworks
     'tinymce',
     "ckeditor",
+    'avatar',
 ]
 
 MIDDLEWARE = [

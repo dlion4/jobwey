@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+<!---->
+{% load static %}
+<!-- Navbar End -->
+{% block hero %}{% endblock hero %}
+<!-- section-->
+
+{% block main %}
+
+<div class="container mt-60">
+  {% if visas %}
+  <div class="row g-4">
+    {% for visa in visas %}
+    <div class="col-12">
+      <div
+        class="job-post job-post-list rounded shadow p-4 d-md-flex align-items-center justify-content-between position-relative"
+      >
+        <div class="d-flex align-items-center w-310px">
+          <svg
+            class="img-fluid avatar avatar-md-sm rounded-circle shadow"
+            width="40"
+            height="40"
+            data-jdenticon-value="user{{visa.pk}}"
+          ></svg>
+
+          <div class="ms-3">
+            <a href="job-detail-one.html" class="h5 title text-dark"
+              >{{visa.country}}</a
+            >
+          </div>
+        </div>
+
+    
+        <div class="mt-3 mt-md-0">
+          <a
+            href=""
+            class="btn btn-sm btn-icon btn-pills btn-soft-primary bookmark"
+            ><i data-feather="bookmark" class="icons"></i
+          ></a>
+          <a
+            href="{{visa.get_absolute_url}}"
+            class="btn btn-sm btn-primary w-full ms-md-1"
+            >View detail</a
+          >
+        </div>
+      </div>
+    </div>
+    <!--end col-->
+    {% endfor %}
+  </div>
+  {% endif %}
+</div>
+
+{% endblock main %}
