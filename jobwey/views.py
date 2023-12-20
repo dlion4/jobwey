@@ -4,6 +4,7 @@ from django.http import HttpResponse
 from django.views.generic import View, TemplateView
 from companies.models import Company, Job
 from .models import Visa ,Service
+from posts.models import Post
 # Create your views here.
 
 class ContextMixin:
@@ -37,6 +38,8 @@ class HomeView(TemplateView):
     template_name = "home/index.html"
     queryset = Job
     company = Company
+    posts = Post.objects.all()
+
 
     def get_best_company(self):
         return self.company.objects.all().order_by("?")[:6]
@@ -45,6 +48,7 @@ class HomeView(TemplateView):
         context = super().get_context_data(**kwargs)
         context["jobs"] = self.queryset.objects.all().order_by("-createdAt")
         context['best_companies'] = self.get_best_company()
+        context['posts'] = self.posts.order_by("-id")[:3]
         return context
     
     
