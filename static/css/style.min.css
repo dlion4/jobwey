@@ -2179,11 +2179,11 @@ button:not(:disabled) {
   color: #1e293b !important;
 }
 #topnav .logo .l-dark,
-#topnav .logo .logo-dark-mode {
+#topnav .logo .jobwey4x-mode {
   display: none;
 }
 #topnav .logo .l-light,
-#topnav .logo .logo-light-mode {
+#topnav .logo .jobwey4x-mode {
   display: inline-block;
 }
 #topnav .logo .big-logo {
