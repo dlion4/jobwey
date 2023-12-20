@@ -243,11 +243,11 @@ if USE_S3:
     AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
     # s3 static settings
     # s3 static settings
-    STATIC_LOCATION = 'static'
+    STATIC_LOCATION = 'static_v1'
     STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATIC_LOCATION}/'
     STATICFILES_STORAGE = 'upjobwey.mediaStorage.StaticStorage'
     # s3 public media settings
-    PUBLIC_MEDIA_LOCATION = 'media'
+    PUBLIC_MEDIA_LOCATION = 'media_v1'
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_MEDIA_LOCATION}/'
     DEFAULT_FILE_STORAGE = 'upjobwey.mediaStorage.PublicMediaStorage'
 
