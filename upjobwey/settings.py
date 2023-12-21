@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     "ckeditor",
     'avatar',
     'storages',
+    "corsheaders",
 ]
 
 MIDDLEWARE = [
