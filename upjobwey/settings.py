@@ -252,3 +252,29 @@ else:
 
     MEDIA_URL = "media/"
     MEDIA_ROOT = BASE_DIR / "media"
+
+
+
+CORS_ALLOWED_ORIGINS = [
+    "https://jobwey.com",
+    "http://jobwey.com",
+    # Add other allowed origins here
+]
+
+# Allow all headers and methods for simplicity. Adjust this according to your needs.
+# CORS_ALLOW_ALL_ORIGINS = False
+CORS_ALLOW_METHODS = [
+    "DELETE",
+    "GET",
+    "OPTIONS",
+    "PATCH",
+    "POST",
+    "PUT",
+]
+
+
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://jobwey.com",
+    "http://jobwey.com",
+]
