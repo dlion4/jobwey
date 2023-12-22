@@ -18,11 +18,13 @@
             <div class="d-flex align-items-center">
               <i data-feather="bookmark" class="fea icon-lg"></i>
               <div class="flex-1 ms-3">
-                <h4 class="fw-bold text-white mb-2">Explore a job now!</h4>
+                <h4 class="fw-bold text-white mb-2">Best Job Portal</h4>
                 <p class="text-white-50 mb-0">
-                  Search all the open positions on the web. Get your own
-                  personalized salary estimate. Read reviews on over 30000+
-                  companies worldwide.
+                  At Jobwey, we're not just an average job platform, we're the
+                  bridge to your brighter future. We understand the anxieties,
+                  challenges, and excitement of navigating the unknown landscape
+                  of the job market. That's why we don't just offer jobs, we
+                  offer possibilities.
                 </p>
               </div>
             </div>
@@ -65,7 +67,9 @@
                 class="list-unstyled footer-list terms-service text-center text-sm-end mb-0"
               >
                 <li class="list-inline-item my-2">
-                  <a href="index.html" class="text-foot fs-6 fw-medium me-2"
+                  <a
+                    href="{% url 'jobwey:home' %}"
+                    class="text-foot fs-6 fw-medium me-2"
                     ><i class="mdi mdi-circle-small"></i> Home</a
                   >
                 </li>
@@ -80,22 +84,24 @@
                   >
                 </li>
                 <li class="list-inline-item my-2">
-                  <a href="aboutus.html" class="text-foot fs-6 fw-medium me-2"
+                  <a
+                    href="{% url 'aboutus' %}"
+                    class="text-foot fs-6 fw-medium me-2"
                     ><i class="mdi mdi-circle-small"></i> About us</a
                   >
                 </li>
                 <li class="list-inline-item my-2">
-                  <a href="pricing.html" class="text-foot fs-6 fw-medium"
+                  <a href="{% url 'contact' %}" class="text-foot fs-6 fw-medium"
                     ><i class="mdi mdi-circle-small"></i> Contact Us</a
                   >
                 </li>
                 <li class="list-inline-item my-2">
-                  <a href="pricing.html" class="text-foot fs-6 fw-medium"
+                  <a href="#" class="text-foot fs-6 fw-medium"
                     ><i class="mdi mdi-circle-small"></i> Jobs</a
                   >
                 </li>
                 <li class="list-inline-item my-2">
-                  <a href="pricing.html" class="text-foot fs-6 fw-medium"
+                  <a href="#" class="text-foot fs-6 fw-medium"
                     ><i class="mdi mdi-circle-small"></i> Testimonies</a
                   >
                 </li>
@@ -135,31 +141,31 @@
                   <a
                     href="{% url 'jobwey:services' %}"
                     class="text-foot fs-6 fw-medium me-2"
-                    ><i class="mdi mdi-circle-small"></i> Services</a
+                    ><i class="mdi mdi-circle-small"></i> Customer Services</a
                   >
                 </li>
                 <li class="list-inline-item my-2">
                   <a
-                    href="{% url 'jobwey:services' %}"
+                    href="{% url 'terms' %}"
                     class="text-foot fs-6 fw-medium me-2"
                     ><i class="mdi mdi-circle-small"></i> Terms & conditions</a
                   >
                 </li>
                 <li class="list-inline-item my-2">
-                  <a href="job-post.html" class="text-foot fs-6 fw-medium me-2"
+                  <a
+                    href="{% url 'privacy' %}"
+                    class="text-foot fs-6 fw-medium me-2"
                     ><i class="mdi mdi-circle-small"></i> Privacy Policy</a
                   >
                 </li>
                 <li class="list-inline-item my-2">
-                  <a href="aboutus.html" class="text-foot fs-6 fw-medium me-2"
+                  <a
+                    href="{% url 'contract' %}"
+                    class="text-foot fs-6 fw-medium me-2"
                     ><i class="mdi mdi-circle-small"></i> Contracts</a
                   >
                 </li>
-                <li class="list-inline-item my-2">
-                  <a href="pricing.html" class="text-foot fs-6 fw-medium"
-                    ><i class="mdi mdi-circle-small"></i> Customer Services</a
-                  >
-                </li>
+
                 <li class="list-inline-item my-2">
                   <a
                     href="{% url 'jobwey:visas' %}"

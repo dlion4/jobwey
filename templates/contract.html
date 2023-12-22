@@ -1,0 +1,708 @@
+{% extends "base.html" %}
+<!---->
+{% load static %}
+<!-- Navbar End -->
+{% block hero %}{% endblock hero %}
+<!-- section-->
+
+{% block main %}
+
+<!-- Hero Start -->
+<section
+  class="bg-half-170 d-table w-100"
+  style="background: url('images/hero/bg.jpg')"
+>
+  <div class="bg-overlay bg-gradient-overlay"></div>
+  <div class="container">
+    <div class="row mt-5 justify-content-center">
+      <div class="col-12">
+        <div class="title-heading text-center">
+          <h5
+            class="heading fw-semibold mb-0 sub-heading text-white title-dark"
+          >
+            Contract of Service
+          </h5>
+        </div>
+      </div>
+      <!--end col-->
+    </div>
+    <!--end row-->
+
+    <div class="position-middle-bottom">
+      <nav aria-label="breadcrumb" class="d-block">
+        <ul class="breadcrumb breadcrumb-muted mb-0 p-0">
+          <li class="breadcrumb-item">
+            <a href="{% url 'jobwey:home' %}">Jobwey</a>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">Contracts</li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <!--end container-->
+</section>
+<!--end section-->
+<div class="position-relative">
+  <div class="shape overflow-hidden text-white">
+    <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z"
+        fill="currentColor"
+      ></path>
+    </svg>
+  </div>
+</div>
+<!-- Hero End -->
+
+<!-- Start -->
+<section class="section">
+  <div class="container">
+    <div class="row g-4 align-items-lg-center">
+      <div class="col-lg-3 col-md-6 col-12">
+        <div class="pricing text-center rounded position-relative shadow">
+          <div class="price-header rounded-top bg-dark bg-white-dark pt-5 pb-5">
+            <h5 class="price-title text-white title-dark">
+              Self-Cartered Based
+            </h5>
+            <p class="mb-0 text-white-50">
+              Suitable for those able to finance their bills
+            </p>
+            <p class="mb-0 text-white-50">
+              You are able to pay for the services processing for:
+            </p>
+          </div>
+          <div
+            class="d-flex justify-content-center bg-light border-bottom py-4"
+          >
+            {% comment %} <span class="h6 mb-0">$</span>
+            <span class="price h4 mb-0 ms-1">0.00</span>
+            <span class="h6 align-self-end mb-1">/mo</span> {% endcomment %}
+          </div>
+          <div class="pricing-features text-start">
+            <ul class="feature list-unstyled py-4 p-3 mb-0">
+              <li class="feature-list text-muted">
+                <i
+                  data-feather="arrow-right-circle"
+                  class="fea icon-sm text-dark me-2"
+                ></i
+                >Visa Application
+              </li>
+              <li class="feature-list text-muted mt-2">
+                <i
+                  data-feather="arrow-right-circle"
+                  class="fea icon-sm text-dark me-2"
+                ></i
+                >Health and Related Documents
+              </li>
+              <li class="feature-list text-muted mt-2">
+                <i
+                  data-feather="arrow-right-circle"
+                  class="fea icon-sm text-dark me-2"
+                ></i
+                >Flight Booking and Ticket
+              </li>
+              <li class="feature-list text-muted mt-2">
+                <i
+                  data-feather="arrow-right-circle"
+                  class="fea icon-sm text-dark me-2"
+                ></i
+                >Accomodation during the process
+              </li>
+              <li class="feature-list text-muted mt-2">
+                <i
+                  data-feather="arrow-right-circle"
+                  class="fea icon-sm text-dark me-2"
+                ></i
+                >Other Necessary Requirements
+              </li>
+              <li class="feature-list text-muted mt-2">
+                <i
+                  data-feather="arrow-right-circle"
+                  class="fea icon-sm text-dark me-2"
+                ></i
+                >Associated Members and Family
+              </li>
+            </ul>
+            <div class="border-top text-center py-4">
+              <a href="javascript:void(0)" class="btn btn-dark">Proceed</a>
+            </div>
+          </div>
+        </div>
+        <!--end price three-->
+      </div>
+      <!--end col-->
+
+      <div class="col-lg-3 col-md-6 col-12">
+        <div
+          class="pricing text-center rounded position-relative overflow-hidden shadow"
+        >
+          <div class="ribbon ribbon-right overflow-hidden">
+            <span class="text-center bg-warning d-block shadow small h6"
+              >Best</span
+            >
+          </div>
+          <div class="price-header rounded-top bg-dark bg-white-dark pt-5 pb-5">
+            <h5 class="price-title text-white title-dark">Half/Half-Based</h5>
+            <p class="mb-0 text-white-50">
+              Suitable for those who need additional financial support where
+              necessary
+            </p>
+          </div>
+          <div
+            class="d-flex justify-content-center bg-light border-bottom py-4"
+          >
+            {% comment %} <span class="h6 mb-0">$</span>
+            <span class="price h4 mb-0 ms-1">9.99</span>
+            <span class="h6 align-self-end mb-1">/mo</span> {% endcomment %}
+          </div>
+          <div class="pricing-features text-start">
+            <ul class="feature list-unstyled py-4 p-3 mb-0">
+              <li>
+                <i class="fea icon-sm text-dark me-2"></i>
+                <strong> Contracter will Pay for: </strong>
+              </li>
+              <li class="feature-list text-muted mt-2">
+                <i
+                  data-feather="arrow-right-circle"
+                  class="fea icon-sm text-dark me-2"
+                ></i
+                >Visa Application
+              </li>
+              <li class="feature-list text-muted mt-2">
+                <i
+                  data-feather="arrow-right-circle"
+                  class="fea icon-sm text-dark me-2"
+                ></i
+                >Neccesary Documents
+              </li>
+              <li class="feature-list text-muted mt-2">
+                <i
+                  data-feather="arrow-right-circle"
+                  class="fea icon-sm text-dark me-2"
+                ></i
+                >Skill Training (if necessary)
+              </li>
+              <li>
+                <i class="fea icon-sm text-dark me-2"></i>
+                <strong> Client will Pay for: </strong>
+              </li>
+              <li class="feature-list text-muted mt-2">
+                <i
+                  data-feather="arrow-right-circle"
+                  class="fea icon-sm text-dark me-2"
+                ></i
+                >Personal documents and health Requirements
+              </li>
+              <li class="feature-list text-muted mt-2">
+                <i
+                  data-feather="arrow-right-circle"
+                  class="fea icon-sm text-dark me-2"
+                ></i
+                >Accommodation
+              </li>
+              <li class="feature-list text-muted mt-2">
+                <i
+                  data-feather="arrow-right-circle"
+                  class="fea icon-sm text-dark me-2"
+                ></i
+                >Other necesary requirements
+              </li>
+            </ul>
+            <div class="border-top text-center py-4">
+              <a href="javascript:void(0)" class="btn btn-dark">Proceed</a>
+            </div>
+          </div>
+        </div>
+        <!--end price three-->
+      </div>
+      <!--end col-->
+
+      <div class="col-lg-3 col-md-6 col-12">
+        <div
+          class="pricing text-center rounded position-relative shadow-lg bg-light"
+        >
+          <div class="price-header rounded-top bg-primary pt-5 pb-5">
+            <h5 class="price-title text-white title-dark">Contractor-Based</h5>
+            <p class="mb-0 text-white-50">
+              Suitable for Clients who lack the means to finace the whole
+              process
+            </p>
+            <p class="mb-0 text-white-50">
+              The contractor will take care of the following costs:
+            </p>
+          </div>
+          <div
+            class="d-flex justify-content-center bg-light border-bottom py-5"
+          ></div>
+          <div class="pricing-features text-start">
+            <ul class="feature list-unstyled py-4 p-3 mb-0">
+              <li class="feature-list text-muted">
+                <i
+                  data-feather="arrow-right-circle"
+                  class="fea icon-sm text-dark me-2"
+                ></i
+                >Visa Application
+              </li>
+              <li class="feature-list text-muted mt-2">
+                <i
+                  data-feather="arrow-right-circle"
+                  class="fea icon-sm text-dark me-2"
+                ></i
+                >Health and Related Documents
+              </li>
+              <li class="feature-list text-muted mt-2">
+                <i
+                  data-feather="arrow-right-circle"
+                  class="fea icon-sm text-dark me-2"
+                ></i
+                >Flight Booking and Ticket
+              </li>
+              <li class="feature-list text-muted mt-2">
+                <i
+                  data-feather="arrow-right-circle"
+                  class="fea icon-sm text-dark me-2"
+                ></i
+                >Accomodation during the process
+              </li>
+              <li class="feature-list text-muted mt-2">
+                <i
+                  data-feather="arrow-right-circle"
+                  class="fea icon-sm text-dark me-2"
+                ></i
+                >Other Necessary Requirements
+              </li>
+              <li class="feature-list text-muted mt-2">
+                <i
+                  data-feather="arrow-right-circle"
+                  class="fea icon-sm text-dark me-2"
+                ></i
+                >Associated facilitation
+              </li>
+            </ul>
+            <div class="border-top text-center py-4">
+              <a href="javascript:void(0)" class="btn btn-dark">Proceed</a>
+            </div>
+          </div>
+        </div>
+        <!--end price three-->
+      </div>
+      <!--end col-->
+
+      <div class="col-lg-3 col-md-6 col-12">
+        <div class="pricing text-center rounded position-relative shadow">
+          <div class="price-header rounded-top bg-dark bg-white-dark pt-5 pb-5">
+            <h5 class="price-title text-white title-dark">Sponsorship-Based</h5>
+            <p class="mb-0 text-white-50">
+              Suitable for those who get sponsored by jobwey or other sponsors
+            </p>
+          </div>
+          <div
+            class="d-flex justify-content-center bg-light border-bottom py-4"
+          ></div>
+          <div class="pricing-features text-start">
+            <ul class="feature list-unstyled py-4 p-3 mb-0">
+              <li class="feature-list text-muted">
+                <i
+                  data-feather="arrow-right-circle"
+                  class="fea icon-sm text-dark me-2"
+                ></i
+                >Free job oppunity
+              </li>
+              <li class="feature-list text-muted mt-2">
+                <i
+                  data-feather="arrow-right-circle"
+                  class="fea icon-sm text-dark me-2"
+                ></i
+                >Free application process
+              </li>
+              <li class="feature-list text-muted mt-2">
+                <i
+                  data-feather="arrow-right-circle"
+                  class="fea icon-sm text-dark me-2"
+                ></i
+                >Free assistance with requirements
+              </li>
+              <li class="feature-list text-muted mt-2">
+                <i
+                  data-feather="arrow-right-circle"
+                  class="fea icon-sm text-dark me-2"
+                ></i
+                >Free consultation
+              </li>
+              <li class="feature-list text-muted mt-2">
+                <i
+                  data-feather="arrow-right-circle"
+                  class="fea icon-sm text-dark me-2"
+                ></i
+                >Free Appointments
+              </li>
+            </ul>
+            <div class="border-top text-center py-4">
+              <a href="javascript:void(0)" class="btn btn-dark">Try it out</a>
+            </div>
+          </div>
+        </div>
+        <!--end price three-->
+      </div>
+      <!--end col-->
+    </div>
+    <!--end row-->
+  </div>
+  <!--end container-->
+
+  <div class="container mt-100 mt-60">
+    <div class="row g-4 align-items-center">
+      <div class="col-lg-6 col-md-6 mb-5">
+        <div class="about-left">
+          <div class="position-relative shadow rounded img-one">
+            <img
+              src="images/about/ab01.jpg"
+              class="img-fluid rounded"
+              alt="work-image"
+            />
+          </div>
+
+          <div class="img-two shadow rounded p-2 bg-white">
+            <img
+              src="images/about/ab02.jpg"
+              class="img-fluid rounded"
+              alt="work-image"
+            />
+
+            <div class="position-absolute top-0 start-50 translate-middle">
+              <a
+                href="#!"
+                data-type="youtube"
+                data-id="yba7hPeTSjk"
+                class="avatar avatar-md-md rounded-pill shadow card d-flex justify-content-center align-items-center lightbox"
+              >
+                <i class="mdi mdi-play mdi-24px text-primary"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--end col-->
+
+      <div class="col-lg-6 col-md-6">
+        <div class="section-title mb-4 ms-lg-3">
+          <h4 class="title mb-3">Frequently Asked Questions</h4>
+          <p class="text-muted para-desc mb-0">
+            The Jobwey platform is here to simplify your job search, both within
+            Kenya and abroad. It actively searches for job opportunities,
+            provides personalized insights into local and international
+            positions, and connects you with potential employers. Users can
+            easily create profiles, explore job openings, and access valuable
+            career-related information.
+          </p>
+
+          <div class="accordion mt-4 pt-2" id="buyingquestion">
+            <div class="accordion-item rounded">
+              <h2 class="accordion-header" id="headingOne">
+                <button
+                  class="accordion-button border-0 bg-light"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseOne"
+                  aria-expanded="true"
+                  aria-controls="collapseOne"
+                >
+                  How does the local job platform work?
+                </button>
+              </h2>
+              <div
+                id="collapseOne"
+                class="accordion-collapse border-0 collapse show"
+                aria-labelledby="headingOne"
+                data-bs-parent="#buyingquestion"
+              >
+                <div class="accordion-body text-muted">
+                  Jobwey job platform is designed to simplify your job search,
+                  both within Kenya and abroad. It actively searches for job
+                  opportunities, provides personalized insights into local and
+                  international positions, and connects you with potential
+                  employers. Users can easily create profiles, explore job
+                  openings, and access valuable career-related information.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item rounded mt-2">
+              <h2 class="accordion-header" id="headingTwo">
+                <button
+                  class="accordion-button border-0 bg-light collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseTwo"
+                  aria-expanded="false"
+                  aria-controls="collapseTwo"
+                >
+                  Do I need a professional to use the local job platform?
+                </button>
+              </h2>
+              <div
+                id="collapseTwo"
+                class="accordion-collapse border-0 collapse"
+                aria-labelledby="headingTwo"
+                data-bs-parent="#buyingquestion"
+              >
+                <div class="accordion-body text-muted">
+                  Jobwey job platform is user-friendly, and design skills are
+                  not necessary for basic usage. It's focused on connecting
+                  individuals with job opportunities localy and beyond, offering
+                  insights into salary estimates, and providing company reviews.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item rounded mt-2">
+              <h2 class="accordion-header" id="headingThree">
+                <button
+                  class="accordion-button border-0 bg-light collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseThree"
+                  aria-expanded="false"
+                  aria-controls="collapseThree"
+                >
+                  What do I need to do to start applying for jobs on the local
+                  platform?
+                </button>
+              </h2>
+              <div
+                id="collapseThree"
+                class="accordion-collapse border-0 collapse"
+                aria-labelledby="headingThree"
+                data-bs-parent="#buyingquestion"
+              >
+                <div class="accordion-body text-muted">
+                  To start your job search on jobwey platform, simply create a
+                  profile, specify your preferences, and explore the available
+                  job listings. The platform is dedicated to facilitating local
+                  job opportunities, making it easy for you to apply for
+                  positions in Kenya and potentially abroad.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item rounded mt-2">
+              <h2 class="accordion-header" id="headingFour">
+                <button
+                  class="accordion-button border-0 bg-light collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseFour"
+                  aria-expanded="false"
+                  aria-controls="collapseFour"
+                >
+                  What happens after I apply for a job on the local platform?
+                </button>
+              </h2>
+              <div
+                id="collapseFour"
+                class="accordion-collapse border-0 collapse"
+                aria-labelledby="headingFour"
+                data-bs-parent="#buyingquestion"
+              >
+                <div class="accordion-body text-muted">
+                  After applying for a job on jobwey, the hiring process varies
+                  by the respective companies. Potential employers may contact
+                  you for interviews or additional assessments as part of their
+                  standard hiring procedures.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item rounded mt-2">
+              <h2 class="accordion-header" id="headingFive">
+                <button
+                  class="accordion-button border-0 bg-light collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseFive"
+                  aria-expanded="false"
+                  aria-controls="collapseFive"
+                >
+                  How can individuals in Kenya benefit from the local job
+                  platform for international opportunities?
+                </button>
+              </h2>
+              <div
+                id="collapseFive"
+                class="accordion-collapse border-0 collapse"
+                aria-labelledby="headingFive"
+                data-bs-parent="#buyingquestion"
+              >
+                <div class="accordion-body text-muted">
+                  The local job platform extends its services to individuals in
+                  Kenya seeking job opportunities abroad. Users can create and
+                  account, navigate to our job section, and explore
+                  international job listings. The platform may also provide
+                  information on work visas and support for relocation to
+                  enhance the experience for those seeking global opportunities.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item rounded mt-2">
+              <h2 class="accordion-header" id="headingSix">
+                <button
+                  class="accordion-button border-0 bg-light collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseSix"
+                  aria-expanded="false"
+                  aria-controls="collapseSix"
+                >
+                  Are there resources on Jobwey platform to guide individuals
+                  through the Kenyan/local job market?
+                </button>
+              </h2>
+              <div
+                id="collapseSix"
+                class="accordion-collapse border-0 collapse"
+                aria-labelledby="headingSix"
+                data-bs-parent="#buyingquestion"
+              >
+                <div class="accordion-body text-muted">
+                  The Jobwey platform may offer resources and insights into the
+                  local job market, providing valuable information about
+                  industry trends, local companies, and tips for getting job
+                  connection.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item rounded mt-2">
+              <h2 class="accordion-header" id="headingSeven">
+                <button
+                  class="accordion-button border-0 bg-light collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseSeven"
+                  aria-expanded="false"
+                  aria-controls="collapseSeven"
+                >
+                  Does Jobwey platform assist with work visa applications for
+                  international opportunities?
+                </button>
+              </h2>
+              <div
+                id="collapseSeven"
+                class="accordion-collapse border-0 collapse"
+                aria-labelledby="headingSeven"
+                data-bs-parent="#buyingquestion"
+              >
+                <div class="accordion-body text-muted">
+                  For individuals looking to work abroad, the job platform may
+                  provide guidance on work visa applications. It could offer
+                  information on the documentation required, application
+                  processes, and other essential details to support users in
+                  pursuing international job opportunities.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item rounded mt-2">
+              <h2 class="accordion-header" id="headingEight">
+                <button
+                  class="accordion-button border-0 bg-light collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseEight"
+                  aria-expanded="false"
+                  aria-controls="collapseEight"
+                >
+                  Are there specific features on the platform for individuals
+                  seeking jobs within Kenya or Africa?
+                </button>
+              </h2>
+              <div
+                id="collapseEight"
+                class="accordion-collapse border-0 collapse"
+                aria-labelledby="headingEight"
+                data-bs-parent="#buyingquestion"
+              >
+                <div class="accordion-body text-muted">
+                  Yes, the job platform may have tailored features for
+                  individuals specifically seeking jobs localy. This could
+                  include a localized job search, industry-specific filters, and
+                  resources that cater to the unique aspects of the local job
+                  market.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item rounded mt-2">
+              <h2 class="accordion-header" id="headingNine">
+                <button
+                  class="accordion-button border-0 bg-light collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseNine"
+                  aria-expanded="false"
+                  aria-controls="collapseNine"
+                >
+                  How does the platform support individuals in Kenya planning to
+                  work abroad temporarily?
+                </button>
+              </h2>
+              <div
+                id="collapseNine"
+                class="accordion-collapse border-0 collapse"
+                aria-labelledby="headingNine"
+                data-bs-parent="#buyingquestion"
+              >
+                <div class="accordion-body text-muted">
+                  The platform may offer insights and resources for individuals
+                  in Kenya planning temporary work abroad. This could include
+                  information on short-term assignments, cultural
+                  considerations, and resources to help users make informed
+                  decisions about working abroad for a limited duration.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item rounded mt-2">
+              <h2 class="accordion-header" id="headingTen">
+                <button
+                  class="accordion-button border-0 bg-light collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseTen"
+                  aria-expanded="false"
+                  aria-controls="collapseTen"
+                >
+                  Is there information on the platform about abroad leisure and
+                  travel opportunities for individuals?
+                </button>
+              </h2>
+              <div
+                id="collapseTen"
+                class="accordion-collapse border-0 collapse"
+                aria-labelledby="headingTen"
+                data-bs-parent="#buyingquestion"
+              >
+                <div class="accordion-body text-muted">
+                  In addition to job-related features, the platform may provide
+                  information on leisure and travel opportunities. This could
+                  include insights into forein countries' destinations, cultural
+                  events, and other relevant details to enhance the overall
+                  experience for individuals.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--end col-->
+    </div>
+    <!--end row-->
+  </div>
+  <!--end container-->
+</section>
+<!--end section-->
+<!-- End -->
+
+{% endblock main %}

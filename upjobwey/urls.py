@@ -1,4 +1,5 @@
 from django.conf import settings
+from . import views
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
@@ -29,7 +30,13 @@ urlpatterns = [
         }},
     name="django.contrib.sitemaps.views.sitemap",
 ),
-    path("robots.txt",RoboticView.as_view())
+    path("robots.txt",RoboticView.as_view()),
+    path("aboutus/",views.AboutUsView.as_view(),name='aboutus'),
+    path("contract/",views.ContractView.as_view(),name='contract'),
+    path("contactus/",views.ContactView.as_view(),name='contact'),
+    path("privacy/",views.PrivacyView.as_view(),name='privacy'),
+    path("terms/",views.TermsView.as_view(),name='terms')
+    
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

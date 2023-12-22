@@ -2324,7 +2324,7 @@ button:not(:disabled) {
   transform: rotate(-45deg);
 }
 #topnav .navbar-toggle.open span:hover {
-  background-color: #3b82f6;
+  background-color: #acc7ff;
 }
 #topnav .navbar-toggle:hover,
 #topnav .navbar-toggle:focus,
