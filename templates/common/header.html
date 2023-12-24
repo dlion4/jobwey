@@ -3,7 +3,7 @@
 <header
   id="topnav"
   class="defaultscroll sticky nav-sticky"
-  style="background-color: #1e293b; color: white"
+  style="color: #3b82f6"
 >
   <div class="container">
     <a class="logo" href="{% url 'jobwey:home' %}">
@@ -178,30 +178,30 @@
       <!-- Navigation Menu-->
       <ul class="navigation-menu nav-right nav-light">
         <li class="parent-menu-item">
-          <a style="color: gray" href="{% url 'jobwey:home' %}">Home</a
+          <a style="color: #3b82f6" href="{% url 'jobwey:home' %}">Home</a
           ><span class="menu-arrow"></span>
         </li>
 
         <li class="parent-parent-menu-item">
-          <a style="color: gray" href="{% url 'company:job_list_view' %}">
+          <a style="color: #3b82f6" href="{% url 'company:job_list_view' %}">
             Jobs
           </a>
         </li>
 
         <li class="has-submenu parent-menu-item">
-          <a style="color: gray" href="{% url 'company:company_list_view' %}"
+          <a style="color: #3b82f6" href="{% url 'company:company_list_view' %}"
             >Employers</a
           >
         </li>
 
         <li class="has-submenu parent-menu-item">
-          <a style="color: gray" href="{% url 'applicant:applicant' %}"
+          <a style="color: #3b82f6" href="{% url 'applicant:applicant' %}"
             >Clients</a
           >
         </li>
         <li>
           <a
-            style="color: gray"
+            style="color: #3b82f6"
             href="{% url 'posts:post_list' %}"
             class="sub-menu-item"
             >Blogs</a
@@ -209,7 +209,12 @@
         </li>
 
         <li>
-          <a style="color: gray" href="" class="sub-menu-item">Contact Us</a>
+          <a
+            style="color: #3b82f6"
+            href="{% url 'contact' %}"
+            class="sub-menu-item"
+            >Contact Us</a
+          >
         </li>
       </ul>
       <!--end navigation menu-->
