@@ -24,7 +24,9 @@
     <div class="col-md-4">
       <div class="counter-box text-center">
         <h1 class="fw-bold">
-          <span class="counter-value" data-target="50">50</span>+
+          <span class="counter-value" data-target="{{job.positions.count}}"
+            >{{job.positions.count}}</span
+          >+
         </h1>
         <h6 class="counter-head text-muted text-uppercase">Available Jobs</h6>
       </div>
@@ -34,7 +36,11 @@
     <div class="col-md-4">
       <div class="counter-box text-center">
         <h1 class="fw-bold">
-          <span class="counter-value" data-target="60">60</span>+
+          <span
+            class="counter-value"
+            data-target="{{job.get_applications.count}}"
+          ></span
+          >+
         </h1>
         <h6 class="counter-head text-muted text-uppercase">Served Clients</h6>
       </div>
@@ -50,7 +56,6 @@
 
 <div class="container mt-60 mt-100">
   <div class="row g-4 align-items-center">
-    
     <div class="col-lg-6 col-md-6 mb-5">
       <div class="about-left">
         <div class="position-relative shadow rounded img-one">

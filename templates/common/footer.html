@@ -74,7 +74,9 @@
                   >
                 </li>
                 <li class="list-inline-item my-2">
-                  <a href="services.html" class="text-foot fs-6 fw-medium me-2"
+                  <a
+                    href="{% url 'jobwey:home' %}"
+                    class="text-foot fs-6 fw-medium me-2"
                     ><i class="mdi mdi-circle-small"></i> How it works</a
                   >
                 </li>
@@ -107,6 +109,7 @@
                 </li>
               </ul>
             </div>
+            {% comment %}
             <div class="col-sm-3">
               <div class="text-center text-sm-start">
                 <ul style="display: flex; margin: 0 10px">
@@ -132,8 +135,9 @@
                 </ul>
               </div>
             </div>
+            {% endcomment %}
 
-            <div class="col-sm-9 mt-4 mt-sm-0">
+            <div class="col-sm-12 mt-4 mt-sm-0">
               <ul
                 class="list-unstyled footer-list terms-service text-center text-sm-end mb-0"
               >
@@ -196,7 +200,7 @@
               <script>
                 document.write(new Date().getFullYear());
               </script>
-              Jobwey.All Rights Reserved
+              Jobwey | All Rights Reserved
             </p>
           </div>
         </div>

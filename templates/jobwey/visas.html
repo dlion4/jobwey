@@ -6,6 +6,40 @@
 <!-- section-->
 
 {% block main %}
+<section
+  class="bg-half-170 d-table w-100"
+  style="background: url('images/hero/bg.jpg')"
+>
+  <div class="bg-overlay bg-gradient-overlay"></div>
+  <div class="container">
+    <div class="row mt-5 justify-content-center">
+      <div class="col-12">
+        <div class="title-heading text-center">
+          <h5
+            class="heading fw-semibold mb-0 sub-heading text-white title-dark"
+          >
+            Requirements
+          </h5>
+        </div>
+      </div>
+      <!--end col-->
+    </div>
+    <!--end row-->
+
+    <div class="position-middle-bottom">
+      <nav aria-label="breadcrumb" class="d-block">
+        <ul class="breadcrumb breadcrumb-muted mb-0 p-0">
+          <li class="breadcrumb-item"><a href="index.html">Jobwey</a></li>
+          <li class="breadcrumb-item active" aria-current="page">
+            Requirements
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <!--end container-->
+</section>
+<!--end section-->
 
 <div class="container mt-60">
   {% if visas %}
@@ -24,16 +58,15 @@
           ></svg>
 
           <div class="ms-3">
-            <a href="job-detail-one.html" class="h5 title text-dark"
+            <a href="{{visa.get_absolute_url}}" class="h5 title text-dark"
               >{{visa.country}}</a
             >
           </div>
         </div>
 
-    
         <div class="mt-3 mt-md-0">
           <a
-            href=""
+            href="{{visa.get_absolute_url}}"
             class="btn btn-sm btn-icon btn-pills btn-soft-primary bookmark"
             ><i data-feather="bookmark" class="icons"></i
           ></a>

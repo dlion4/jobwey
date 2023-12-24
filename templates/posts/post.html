@@ -14,6 +14,71 @@
 <!-- section-->
 
 {% block main %}
+
+<section
+  class="bg-half-170 d-table w-100"
+  style="background: url('images/hero/bg.jpg')"
+>
+  <div class="bg-overlay bg-gradient-overlay"></div>
+  <div class="container">
+    <div class="row mt-5 justify-content-center">
+      <div class="col-12">
+        <div class="title-heading text-center">
+          <span class="badge bg-primary">Jobwey</span>
+          <h5
+            class="heading fw-semibold mb-0 sub-heading text-white title-dark mt-4"
+          >
+            <a
+              href="{{ post.get_absolute_url }}"
+              class="title fw-semibold fs-5 text-dark"
+              >{{post.title|title}}</a
+            >
+          </h5>
+
+          <ul class="list-inline text-center mb-0">
+            <li class="list-inline-item mx-4 mt-4">
+              <span class="text-white-50 d-block">Author</span>
+              <a href="javascript:void(0)" class="text-white title-dark"
+                >Jobwey</a
+              >
+            </li>
+
+            <li class="list-inline-item mx-4 mt-4">
+              <span class="text-white-50 d-block">Date</span>
+              <span class="text-white title-dark"
+                >{{post.createdAt|date:"jS F Y"}}</span
+              >
+            </li>
+
+            <li class="list-inline-item mx-4 mt-4">
+              <span class="text-white-50 d-block">Read Time</span>
+              <span class="text-white title-dark"
+                >{{post.read_time}} min read</span
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!--end col-->
+    </div>
+    <!--end row-->
+
+    <div class="position-middle-bottom">
+      <nav aria-label="breadcrumb" class="d-block">
+        <ul class="breadcrumb breadcrumb-muted mb-0 p-0">
+          <li class="breadcrumb-item">
+            <a href="{% url 'jobwey:home' %}">Jobwey</a>
+          </li>
+          <li class="breadcrumb-item"><a href="blogs.html">Updates</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Detail</li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <!--end container-->
+</section>
+<!--end section-->
+<!--end section-->
 <div class="container">
   <div class="row g-4">
     <div class="row g-4">
