@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django.contrib.humanize",
     "django.contrib.sitemaps",
-    "django.contrib.sites",
+    "django.contrib.admin.sites",
     "account",
     "jobwey",
     "companies",
@@ -58,7 +58,9 @@ INSTALLED_APPS = [
     "storages",
     "corsheaders",
 ]
-site_id = 1
+
+
+SITE_ID = 1
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
