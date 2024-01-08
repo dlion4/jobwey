@@ -26,9 +26,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ["*", 'localhost']
+ALLOWED_HOSTS = ["*", "localhost"]
 
 
 # Application definition
@@ -40,31 +40,29 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-
-    'django.contrib.humanize',
+    "django.contrib.humanize",
     "django.contrib.sitemaps",
-
+    "django.contrib.sites",
     "account",
     "jobwey",
     "companies",
     "applicants",
     "testimonials",
     "posts",
-
     # configarations
     "tokens",
-
     # frameworks
-    'tinymce',
+    "tinymce",
     "ckeditor",
-    'avatar',
-    'storages',
+    "avatar",
+    "storages",
     "corsheaders",
 ]
+site_id = 1
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
-     "whitenoise.middleware.WhiteNoiseMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -78,7 +76,9 @@ ROOT_URLCONF = "upjobwey.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [BASE_DIR / "templates",],
+        "DIRS": [
+            BASE_DIR / "templates",
+        ],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -86,10 +86,8 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
-
-
                 # constants
-                "upjobwey.context_processors.site_constants"
+                "upjobwey.context_processors.site_constants",
             ],
         },
     },
@@ -163,25 +161,24 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-AUTH_USER_MODEL="account.AccountUser"
+AUTH_USER_MODEL = "account.AccountUser"
 
 
 # Email Settings
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
-EMAIL_HOST="localhost"
-EMAIL_PORT=25
-EMAIL_HOST_USER="jobwey@gmail.com"
-EMAIL_HOST_PASSWORD="macy3663"
-EMAIL_USE_TLS=True
+EMAIL_HOST = "localhost"
+EMAIL_PORT = 25
+EMAIL_HOST_USER = "jobwey@gmail.com"
+EMAIL_HOST_PASSWORD = "macy3663"
+EMAIL_USE_TLS = True
 
-TINYMCE_JS_URL = 'https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js'
+TINYMCE_JS_URL = "https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js"
 TINYMCE_COMPRESSOR = False
 
 TINYMCE_DEFAULT_CONFIG = {
@@ -189,10 +186,28 @@ TINYMCE_DEFAULT_CONFIG = {
     "width": "960px",
     "menubar": "file edit view insert format tools table help",
     "plugins": [
-        'advlist', 'autolink', 'link', 'image', 'lists', 'charmap', 'preview', 'anchor', 'pagebreak',
-        'searchreplace', 'wordcount', 'visualblocks', 'visualchars', 'code', 'fullscreen', 'insertdatetime',
-        'media', 'table', 'emoticons', 'template', 'help'
-        ],
+        "advlist",
+        "autolink",
+        "link",
+        "image",
+        "lists",
+        "charmap",
+        "preview",
+        "anchor",
+        "pagebreak",
+        "searchreplace",
+        "wordcount",
+        "visualblocks",
+        "visualchars",
+        "code",
+        "fullscreen",
+        "insertdatetime",
+        "media",
+        "table",
+        "emoticons",
+        "template",
+        "help",
+    ],
     "toolbar": "undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect | alignleft "
     "aligncenter alignright alignjustify | outdent indent |  numlist bullist checklist | forecolor "
     "backcolor casechange permanentpen formatpainter removeformat | pagebreak | charmap emoticons | "
@@ -206,55 +221,53 @@ TINYMCE_DEFAULT_CONFIG = {
 # CK SETTINGS
 
 CKEDITOR_CONFIGS = {
-    'default': {
-        'toolbar': 'Custom',
-        'toolbar_Custom': [
-            ['Bold', 'Italic', 'Underline'],
+    "default": {
+        "toolbar": "Custom",
+        "toolbar_Custom": [
+            ["Bold", "Italic", "Underline"],
             [
-                'NumberedList', 'BulletedList', '-', '-', 'JustifyLeft',
-                  'JustifyCenter', 'JustifyRight', 'JustifyBlock',
-                  ],
-            
+                "NumberedList",
+                "BulletedList",
+                "-",
+                "-",
+                "JustifyLeft",
+                "JustifyCenter",
+                "JustifyRight",
+                "JustifyBlock",
+            ],
         ],
-        'width': 'full',
-        'toolbarCanCollapse': False,
+        "width": "full",
+        "toolbarCanCollapse": False,
     }
 }
 
 
-
-USE_S3 = os.getenv('USE_S3') == 'TRUE'
+USE_S3 = os.getenv("USE_S3") == "TRUE"
 
 if USE_S3:
     # aws settings
-    AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
-    AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
-    AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
-    AWS_DEFAULT_ACL = 'public-read'
-    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
-    AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
+    AWS_ACCESS_KEY_ID = os.getenv("AWS_ACCESS_KEY_ID")
+    AWS_SECRET_ACCESS_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")
+    AWS_STORAGE_BUCKET_NAME = os.getenv("AWS_STORAGE_BUCKET_NAME")
+    AWS_DEFAULT_ACL = "public-read"
+    AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com"
+    AWS_S3_OBJECT_PARAMETERS = {"CacheControl": "max-age=86400"}
     # s3 static settings
     # s3 static settings
-    STATIC_LOCATION = 'static'
-    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATIC_LOCATION}/'
-    STATICFILES_STORAGE = 'upjobwey.mediaStorage.StaticStorage'
+    STATIC_LOCATION = "static"
+    STATIC_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/{STATIC_LOCATION}/"
+    STATICFILES_STORAGE = "upjobwey.mediaStorage.StaticStorage"
     # s3 public media settings
-    PUBLIC_MEDIA_LOCATION = 'media'
-    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_MEDIA_LOCATION}/'
-    DEFAULT_FILE_STORAGE = 'upjobwey.mediaStorage.PublicMediaStorage'
+    PUBLIC_MEDIA_LOCATION = "media"
+    MEDIA_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_MEDIA_LOCATION}/"
+    DEFAULT_FILE_STORAGE = "upjobwey.mediaStorage.PublicMediaStorage"
 
 
-else:
-    STATIC_URL = "static/"
-    STATICFILES_DIRS = [
-        BASE_DIR / "static"
-    ]
-    STATIC_ROOT = BASE_DIR / "staticfiles"
-
-    MEDIA_URL = "media/"
-    MEDIA_ROOT = BASE_DIR / "media"
-
-
+STATICFILES_DIRS = [BASE_DIR / "static"]
+STATIC_URL = "static/"
+MEDIA_URL = "media/"
+MEDIA_ROOT = BASE_DIR / "media"
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
 CORS_ALLOWED_ORIGINS = [
     "https://jobwey.com",
@@ -272,7 +285,6 @@ CORS_ALLOW_METHODS = [
     "POST",
     "PUT",
 ]
-
 
 
 CSRF_TRUSTED_ORIGINS = [
