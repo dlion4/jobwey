@@ -269,7 +269,7 @@ STATICFILES_DIRS = [BASE_DIR / "static"]
 STATIC_URL = "static/"
 MEDIA_URL = "media/"
 MEDIA_ROOT = BASE_DIR / "media"
-STATIC_ROOT = BASE_DIR / "staticfiles"
+STATIC_ROOT = BASE_DIR / "static_root_dir"
 
 CORS_ALLOWED_ORIGINS = [
     "https://jobwey.com",
