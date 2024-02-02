@@ -2685,9 +2685,12 @@ button:not(:disabled) {
   width: 25px;
   display: block;
   position: relative;
-  margin: 30px 0 26px 10px;
-  height: 18px;
+  margin: 55px 30px -416px 30px;
+  height: -18px;
+  padding-right: 0px;
 }
+
+
 
 #topnav .navbar-toggle span {
   height: 2px;
