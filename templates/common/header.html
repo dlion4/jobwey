@@ -167,9 +167,7 @@
       </li>
       {% else %}
       <li class="parent-menu-item btn">
-        <a href="{% url 'account:login' %}" class="background-color: blue;"
-          >Login</a
-        ><span class="menu-arrow"></span>
+        <a href="{% url 'account:login' %}" style="color: #d97f00">Login</a><span class="menu-arrow"></span>
       </li>
       {% endif %}
     </ul>
@@ -178,39 +176,47 @@
       <!-- Navigation Menu-->
       <ul class="navigation-menu nav-right nav-light">
         <li class="parent-menu-item">
-          <a style="color: #3b82f6" href="{% url 'jobwey:home' %}">Home</a
+          <a style="color: #d97f00 " href="{% url 'jobwey:home' %}">Home</a
           ><span class="menu-arrow"></span>
         </li>
 
         <li class="parent-parent-menu-item">
-          <a style="color: #3b82f6" href="{% url 'company:job_list_view' %}">
+          <a style="color: #d97f00" href="{% url 'company:job_list_view' %}">
             Jobs
           </a>
         </li>
 
         <li class="has-submenu parent-menu-item">
-          <a style="color: #3b82f6" href="{% url 'company:company_list_view' %}"
+          <a style="color: #d97f00" href="{% url 'company:company_list_view' %}"
             >Employers</a
           >
         </li>
 
         <li class="has-submenu parent-menu-item">
-          <a style="color: #3b82f6" href="{% url 'applicant:applicant' %}"
+          <a style="color: #d97f00" href="{% url 'applicant:applicant' %}"
             >Clients</a
           >
         </li>
         <li>
           <a
-            style="color: #3b82f6"
-            href="{% url 'posts:post_list' %}"
+            style="color: #d97f00"
+            href="{% url 'jobwey:services' %}"
             class="sub-menu-item"
             >Blogs</a
+          >
+        </li>
+        <li>
+          <a
+            style="color: #d97f00"
+            href="{% url 'jobwey:visas' %}"
+            class="sub-menu-item"
+            >Visas</a
           >
         </li>
 
         <li>
           <a
-            style="color: #3b82f6"
+            style="color: #d97f00"
             href="{% url 'contact' %}"
             class="sub-menu-item"
             >Contact Us</a

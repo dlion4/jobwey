@@ -3,6 +3,7 @@ from django.urls import reverse
 from django.db import models
 from django.db.models import Avg
 from tinymce import models as tinymce_models
+from ckeditor.fields import RichTextField
 # Create your models here.
 
 
@@ -13,7 +14,7 @@ class Company(models.Model):
     vision = models.CharField(max_length=100, default="Digital Marketing Solutions for Tomorrow")
     logo = models.ImageField(upload_to="company/logs/", blank=True, null=True)
     image = models.ImageField(upload_to="company/logs/", blank=True, null=True)
-    content = tinymce_models.HTMLField()
+    content = RichTextField()
     createdAt = models.DateTimeField(auto_now_add=True)
     updatedAt = models.DateTimeField(auto_now=True)
 
@@ -61,7 +62,7 @@ class Job(models.Model):
     location = models.CharField(max_length=100, blank=True, null=True)
     min_salary = models.PositiveIntegerField(default=100)
     max_salary = models.PositiveIntegerField()
-    content = tinymce_models.HTMLField()
+    content = RichTextField()
     createdAt = models.DateTimeField(auto_now_add=True)
     updatedAt = models.DateTimeField(auto_now=True)
 

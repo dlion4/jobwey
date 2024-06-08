@@ -2,6 +2,7 @@ from django.urls import reverse
 from django.db import models
 from tinymce import models as tinymce_models
 from account.models import Profile
+from ckeditor.fields import RichTextField
 # Create your models here.
 
 class Category(models.Model):
@@ -24,7 +25,7 @@ class Post(models.Model):
     tags = models.ManyToManyField(Tag, blank=True)
     slug = models.SlugField(max_length=100, unique=True)
     image = models.ImageField(upload_to="posts/")
-    content = tinymce_models.HTMLField()
+    content = RichTextField()
     createdAt = models.DateTimeField(auto_now_add=True)
     updatedAt = models.DateTimeField(auto_now=True)
     read_time = models.IntegerField(default=0)
