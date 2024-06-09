@@ -106,7 +106,7 @@
             <div class="d-flex widget align-items-center">
               <i data-feather="layout" class="fea icon-ex-md me-3"></i>
               <div class="flex-1">
-                <h6 class="widget-title mb-0">Company Name:</h6>
+                <h6 class="widget-title mb-0">Company Name/Location:</h6>
                 <small class="text-primary mb-0"
                   >{{job.company.name|title}}</small
                 >
@@ -146,7 +146,7 @@
                   Application{{job.get_applications.count|pluralize}}:
                 </h6>
                 <small class="text-primary mb-0"
-                  >{{job.get_applications.count}}</small
+                  >{{job.get_applications.count}} +</small
                 >
               </div>
             </div>
@@ -162,9 +162,9 @@
             <div class="d-flex widget align-items-center mt-3">
               <i data-feather="dollar-sign" class="fea icon-ex-md me-3"></i>
               <div class="flex-1">
-                <h6 class="widget-title mb-0">Salary:</h6>
+                <h6 class="widget-title mb-0">Salary in KES:</h6>
                 <small class="text-primary mb-0"
-                  >+{{job.min_salary|intword}} to
+                  >KES {{job.min_salary|intword}} to
                   {{job.max_salary|intword}}</small
                 >
               </div>

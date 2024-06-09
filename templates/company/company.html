@@ -5,9 +5,9 @@
 
 <section
   class="bg-half-170 d-table w-100"
-  style="background: url('{{company.image.url}}') center"
+  style="center"
 >
-  <div class="bg-overlay bg-gradient-overlay-2"></div>
+  <div class="#"></div>
 </section>
 
 <!--end section-->
@@ -31,6 +31,43 @@
 <!---->
 
 {% block main %}
+<section class="bg-half-170 d-table w-100">
+  <div class="bg-overlay bg-gradient-overlay"></div>
+  <div class="container">
+    <div class="row mt-5 justify-content-center">
+      <div class="col-12">
+        <div class="title-heading text-center">
+          <h5
+            class="heading fw-semibold mb-0 sub-heading text-white title-dark"
+          >
+            {{job.title|title}}
+          </h5>
+        </div>
+      </div>
+      <!--end col-->
+    </div>
+    <!--end row-->
+    <!--
+    
+   
+    <div class="position-middle-bottom">
+      <nav aria-label="breadcrumb" class="d-block">
+        <ul class="breadcrumb breadcrumb-muted mb-0 p-0">
+          <li class="breadcrumb-item"><a href="index.html">Jobwey</a></li>
+          <li class="breadcrumb-item"><a href="job-grid-one.html">Employer|Company</a></li>
+          <li class="breadcrumb-item active" aria-current="page">
+            Employer details
+          </li>
+        </ul>
+      </nav>
+    </div>
+     -->
+
+
+  </div>
+  <!--end container-->
+</section>
+
 
 <div class="container">
   <div class="row justify-content-center">
@@ -124,7 +161,7 @@
                       data-feather="dollar-sign"
                       class="fea icon-sm text-primary me-1"
                     ></i
-                    >${{job.min_salary}} - ${{job.max_salary}}/mo</span
+                    >KES {{job.min_salary}} - {{job.max_salary}}/mo</span
                   >
                 </li>
               </ul>

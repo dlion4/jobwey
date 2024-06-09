@@ -16,9 +16,9 @@ class CompanyCreateForm(forms.ModelForm):
         }
 
 class JobCreateForm(forms.ModelForm):
-    positions = forms.CharField(label="Number of vacancies", widget=forms.NumberInput(attrs={"class": "form-control", "placeholder": "1"}),)
-    min_salary = forms.CharField(label="Minumum salary", widget=forms.NumberInput(attrs={"class": "form-control", "placeholder": "100"}))
-    max_salary = forms.CharField(label="Maximum salary", widget=forms.NumberInput(attrs={"class": "form-control", "placeholder": "1000"}),)
+    positions = forms.CharField(label="Number of vacancies", widget=forms.NumberInput(attrs={"class": "form-control", "placeholder": "10"}),)
+    min_salary = forms.CharField(label="Minumum salary", widget=forms.NumberInput(attrs={"class": "form-control", "placeholder": "30,000"}))
+    max_salary = forms.CharField(label="Maximum salary", widget=forms.NumberInput(attrs={"class": "form-control", "placeholder": "300,000"}),)
 
     class Meta:
         model = Job
