@@ -1,4 +1,4 @@
-﻿/* @font-face {
+﻿@font-face {
   font-family: 'Plus Jakarta Sans';
   font-style: normal;
   font-weight: 400;
@@ -25,4 +25,4 @@
   font-weight: 700;
   font-display: swap;
   src: url(s/plusjakartasans/v8/LDIbaomQNQcsA88c7O9yZ4KMCoOg4IA6-91aHEjcWuA_TknNSg.ttf) format('truetype');
-} */
+}
