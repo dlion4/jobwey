@@ -24,6 +24,8 @@ urlpatterns = [
 
     # frameworks
     path('tinymce/', include('tinymce.urls')),
+    # path('ckeditor/', include('ckeditor.urls')),
+    path('ckeditor-uploader/', include('ckeditor_uploader.urls')),
     path('avatar/', include('avatar.urls')),
     path("sitemap.xml", sitemap, {"sitemaps": {"jobs": GenericSitemap(jobs_dict, priority=0.6),
         "posts": GenericSitemap(posts_dict, priority=0.6)

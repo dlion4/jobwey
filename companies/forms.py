@@ -1,6 +1,8 @@
 from django import forms
 from tinymce import widgets
 from .models import Company, Job, JobType 
+from ckeditor.widgets import CKEditorWidget
+# widget = CKEditorWidget(config_name='awesome_ckeditor')
 
 class CompanyCreateForm(forms.ModelForm):
     logo = forms.FileField(required=False, label="company logo", widget=forms.FileInput(attrs={"class": "form-control"}))
@@ -12,7 +14,7 @@ class CompanyCreateForm(forms.ModelForm):
             "name": forms.TextInput(attrs={"class": "form-control", "placeholder": "company name"}),
             "vision": forms.TextInput(attrs={"class": "form-control", "placeholder": "company vision"}),
             "location": forms.TextInput(attrs={"class": "form-control", "placeholder": "company location"}),
-            "content": widgets.TinyMCE(attrs={"class": "form-control", "row": "100%"})
+            "content": CKEditorWidget()
         }
 
 class JobCreateForm(forms.ModelForm):
@@ -26,5 +28,5 @@ class JobCreateForm(forms.ModelForm):
         widgets = {
             "title": forms.TextInput(attrs={"class": "form-control", "placeholder": "position title"}),
             "location": forms.TextInput(attrs={"class": "form-control", "placeholder": "location of job"}),
-            "content": widgets.TinyMCE(attrs={"class": "form-control", "row": "100%"})
+            "content": CKEditorWidget()
         }
