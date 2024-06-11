@@ -44,7 +44,7 @@ class HomeView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["jobs"] = self.queryset.objects.all().order_by("-createdAt")
+        context["jobs"] = self.queryset.objects.all().order_by("-createdAt").order_by("?")[:21]
         context["best_companies"] = self.get_best_company()
         context["posts"] = self.posts.order_by("-id")[:3]
         return context

@@ -3160,7 +3160,7 @@ button:not(:disabled) {
 
 @media (max-width: 991px) {
   #topnav {
-    /* background-color: #fff; */
+    background-color: #fff;
     box-shadow: 0 0 3px rgba(30, 41, 59, 0.15);
     min-height: 74px;
   }
@@ -3502,7 +3502,7 @@ button:not(:disabled) {
 
 @media (max-width: 767px) {
   .bg-half-170 {
-    padding: 15px 0;
+    padding: 69px 0;
     height: auto;
   }
 }
